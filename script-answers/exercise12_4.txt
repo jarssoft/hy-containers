@@ -1,0 +1,131 @@
+Script started on 2024-09-03 19:32:58+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="84" LINES="25"]
+[?2004h]0;jari@jari-System-Product-Name: ~/works/ohjelmat/react/Fullstack2023/osa 12/part12-containers-applications[01;32mjari@jari-System-Product-Name[00m:[01;34m~/works/ohjelmat/react/Fullstack2023/osa 12/part12-containers-applications[00m$ exitsudo docker start -i musing_raman[6Pcontainer ls -astart -i musing_raman[6Pcontainer ls -a[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Ksudo docker start -i musing_raman[6Pcontainer ls -a[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccript[K --helpudo docker container ls -a[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo docker container run -it ubuntu bash[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccript[Kudo docker container run -it ubuntu bash[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccript[K[2Pexitsudo docker start -i peaceful_chatelet[11Pcontainer ls -astart -i peaceful_chatelet[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Kscriptudo docker container run -it ubuntu bash[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[26Pcontainer ls -a[12@sudo docker [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[12Pcript --help[Kudo docker container ls -astart -i musing_raman[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Ksudo docker container ls -astart -i musing_raman[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K[Kexitsudo docker start -i musing_raman[6Pcontainer ls -astart -i musing_raman[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Ksudo docker start -i musing_raman[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K[Kexitsudo docker start -i musing_raman
+[?2004l[sudo] jari-käyttäjän salasana: ****    
+[?2004h]0;root@ecaca98f42a3: /root@ecaca98f42a3:/# [K]0;root@ecaca98f42a3: /root@ecaca98f42a3:/# [7mapt install -y nodejs[27mapt install -y nodejs
+[?2004lReading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 7%Reading package lists... 7%Reading package lists... 85%Reading package lists... 85%Reading package lists... 86%Reading package lists... 86%Reading package lists... 87%Reading package lists... 87%Reading package lists... 90%Reading package lists... 90%Reading package lists... 92%Reading package lists... 92%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 96%Reading package lists... 96%Reading package lists... 97%Reading package lists... 97%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... 57%Building dependency tree... Done
+Reading state information... 0% Reading state information... 98%Reading state information... Done
+The following additional packages will be installed:
+  ca-certificates libbrotli1 libcares2 libicu74 libnghttp2-14 libnode109
+  libssl3t64 libuv1t64 node-acorn node-busboy node-cjs-module-lexer node-undici
+  node-xtend nodejs-doc openssl
+Suggested packages:
+  npm
+The following NEW packages will be installed:
+  ca-certificates libbrotli1 libcares2 libicu74 libnghttp2-14 libnode109 libuv1t64
+  node-acorn node-busboy node-cjs-module-lexer node-undici node-xtend nodejs
+  nodejs-doc openssl
+The following packages will be upgraded:
+  libssl3t64
+1 upgraded, 15 newly installed, 0 to remove and 28 not upgraded.
+Need to get 30.5 MB of archives.
+After this operation, 111 MB of additional disk space will be used.
+[33m0% [Working][0m            Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 ca-certificates all 20240203 [159 kB]
+[33m0% [Waiting for headers] [1 ca-certificates 2204 B/159 kB 1%][0m                                                             Get:2 http://security.ubuntu.com/ubuntu noble-security/main amd64 libssl3t64 amd64 3.0.13-0ubuntu3.4 [1940 kB]
+[33m0% [2 libssl3t64 2232 B/1940 kB 0%] [1 ca-certificates 12.2 kB/159 kB 8%][0m[33m                                                                         2% [2 libssl3t64 37.2 kB/1940 kB 2%][0m                                    Get:3 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libicu74 amd64 74.2-1ubuntu3.1 [10.9 MB]
+[33m2% [2 libssl3t64 77.1 kB/1940 kB 4%] [3 libicu74 4697 B/10.9 MB 0%][0m[33m7% [2 libssl3t64 309 kB/1940 kB 16%] [3 libicu74 1572 kB/10.9 MB 14%][0m[33m11% [2 libssl3t64 655 kB/1940 kB 34%] [3 libicu74 2813 kB/10.9 MB 26%][0m[33m15% [2 libssl3t64 977 kB/1940 kB 50%] [3 libicu74 4061 kB/10.9 MB 37%][0m[33m18% [2 libssl3t64 1220 kB/1940 kB 63%] [3 libicu74 5114 kB/10.9 MB 47%][0m[33m22% [2 libssl3t64 1561 kB/1940 kB 80%] [3 libicu74 6387 kB/10.9 MB 59%][0m[33m27% [2 libssl3t64 1857 kB/1940 kB 96%] [3 libicu74 7716 kB/10.9 MB 71%][0m[33m                                                                       29% [3 libicu74 7968 kB/10.9 MB 73%][0m[33m34% [Waiting for headers] [3 libicu74 9757 kB/10.9 MB 90%][0m                                                          Get:4 http://security.ubuntu.com/ubuntu noble-security/main amd64 openssl amd64 3.0.13-0ubuntu3.4 [1003 kB]
+[33m36% [4 openssl 985 B/1003 kB 0%] [3 libicu74 10.8 MB/10.9 MB 100%][0m[33m                                                                  38% [4 openssl 25.4 kB/1003 kB 3%][0m                                  Get:5 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libnghttp2-14 amd64 1.59.0-1ubuntu0.1 [74.3 kB]
+[33m38% [4 openssl 29.7 kB/1003 kB 3%] [5 libnghttp2-14 4424 B/74.3 kB 6%][0m[33m                                                                      39% [4 openssl 34.7 kB/1003 kB 3%][0m                                  Get:6 http://archive.ubuntu.com/ubuntu noble/main amd64 libuv1t64 amd64 1.48.0-1.1build1 [97.3 kB]
+[33m39% [4 openssl 34.7 kB/1003 kB 3%] [6 libuv1t64 46.2 kB/97.3 kB 48%][0m[33m                                                                    41% [4 openssl 41.0 kB/1003 kB 4%] [Waiting for headers][0m                                                        Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 libbrotli1 amd64 1.1.0-2build2 [331 kB]
+[33m41% [4 openssl 44.7 kB/1003 kB 4%] [7 libbrotli1 14.2 kB/331 kB 4%][0m[33m                                                                   43% [4 openssl 94.6 kB/1003 kB 9%][0m                                  Get:8 http://archive.ubuntu.com/ubuntu noble/main amd64 libcares2 amd64 1.27.0-1.0ubuntu1 [73.7 kB]
+[33m43% [4 openssl 94.6 kB/1003 kB 9%] [8 libcares2 4096 B/73.7 kB 6%][0m[33m                                                                  44% [4 openssl 107 kB/1003 kB 11%][0m                                  Get:9 http://archive.ubuntu.com/ubuntu noble/universe amd64 node-xtend all 4.0.2-3 [3902 B]
+                                  Get:10 http://archive.ubuntu.com/ubuntu noble/universe amd64 nodejs amd64 18.19.1+dfsg-6ubuntu5 [306 kB]
+[33m46% [4 openssl 107 kB/1003 kB 11%] [10 nodejs 4584 B/306 kB 1%][0m[33m                                                               48% [4 openssl 147 kB/1003 kB 15%] [Waiting for headers][0m                                                        Get:11 http://archive.ubuntu.com/ubuntu noble/universe amd64 node-acorn all 8.8.1+ds+~cs25.17.7-2 [115 kB]
+[33m48% [4 openssl 147 kB/1003 kB 15%] [11 node-acorn 3744 B/115 kB 3%][0m[33m                                                                   49% [4 openssl 159 kB/1003 kB 16%] [Waiting for headers][0m                                                        Get:12 http://archive.ubuntu.com/ubuntu noble/universe amd64 node-cjs-module-lexer all 1.2.3+dfsg-1 [32.1 kB]
+[33m50% [4 openssl 159 kB/1003 kB 16%] [12 node-cjs-module-lexer 11.9 kB/32.1 kB 37%][0m[33m                                                                                 51% [4 openssl 162 kB/1003 kB 16%][0m                                  Get:13 http://archive.ubuntu.com/ubuntu noble/universe amd64 node-busboy all 1.6.0+~cs2.6.0-2 [17.3 kB]
+[33m51% [4 openssl 164 kB/1003 kB 16%] [13 node-busboy 5734 B/17.3 kB 33%][0m[33m                                                                      52% [4 openssl 178 kB/1003 kB 18%][0m                                  Get:14 http://archive.ubuntu.com/ubuntu noble/universe amd64 node-undici all 5.26.3+dfsg1+~cs23.10.12-2 [325 kB]
+[33m53% [4 openssl 435 kB/1003 kB 43%] [14 node-undici 2204 B/325 kB 1%][0m[33m                                                                    55% [4 openssl 484 kB/1003 kB 48%] [Waiting for headers][0m                                                        Get:15 http://archive.ubuntu.com/ubuntu noble/universe amd64 libnode109 amd64 18.19.1+dfsg-6ubuntu5 [11.6 MB]
+[33m55% [4 openssl 484 kB/1003 kB 48%] [15 libnode109 3744 B/11.6 MB 0%][0m[33m62% [4 openssl 803 kB/1003 kB 80%] [15 libnode109 2240 kB/11.6 MB 19%][0m[33m67% [15 libnode109 3728 kB/11.6 MB 32%]                                3067 kB/s 3s[0m[33m73% [15 libnode109 6028 kB/11.6 MB 52%]                                3067 kB/s 2s[0m[33m78% [15 libnode109 7669 kB/11.6 MB 66%]                                3067 kB/s 2s[0m[33m84% [15 libnode109 9884 kB/11.6 MB 85%]                                3067 kB/s 1s[0m[33m89% [Working]                                                          3067 kB/s 1s[0m                                                                                   Get:16 http://archive.ubuntu.com/ubuntu noble/universe amd64 nodejs-doc all 18.19.1+dfsg-6ubuntu5 [3552 kB]
+[33m89% [16 nodejs-doc 2092 B/3552 kB 0%]                                  3067 kB/s 1s[0m[33m97% [16 nodejs-doc 2806 kB/3552 kB 79%]                                3067 kB/s 0s[0m[33m100% [Working]                                                         3067 kB/s 0s[0m                                                                                   Fetched 30.5 MB in 9s (3435 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+
+7[0;24r8[1A(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4449 files and directories currently installed.)
+Preparing to unpack .../libssl3t64_3.0.13-0ubuntu3.4_amd64.deb ...
+7[25;0f[42m[30mProgress: [  0%][49m[39m [..............................................................] 87[25;0f[42m[30mProgress: [  2%][49m[39m [..............................................................] 8Unpacking libssl3t64:amd64 (3.0.13-0ubuntu3.4) over (3.0.13-0ubuntu3.2) ...
+7[25;0f[42m[30mProgress: [  3%][49m[39m [#.............................................................] 8Setting up libssl3t64:amd64 (3.0.13-0ubuntu3.4) ...
+7[25;0f[42m[30mProgress: [  5%][49m[39m [##............................................................] 87[25;0f[42m[30mProgress: [  6%][49m[39m [###...........................................................] 8Selecting previously unselected package openssl.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4449 files and directories currently installed.)
+Preparing to unpack .../00-openssl_3.0.13-0ubuntu3.4_amd64.deb ...
+7[25;0f[42m[30mProgress: [  8%][49m[39m [####..........................................................] 8Unpacking openssl (3.0.13-0ubuntu3.4) ...
+7[25;0f[42m[30mProgress: [  9%][49m[39m [#####.........................................................] 8Selecting previously unselected package ca-certificates.
+Preparing to unpack .../01-ca-certificates_20240203_all.deb ...
+7[25;0f[42m[30mProgress: [ 11%][49m[39m [######........................................................] 8Unpacking ca-certificates (20240203) ...
+7[25;0f[42m[30mProgress: [ 12%][49m[39m [#######.......................................................] 8Selecting previously unselected package libicu74:amd64.
+Preparing to unpack .../02-libicu74_74.2-1ubuntu3.1_amd64.deb ...
+7[25;0f[42m[30mProgress: [ 14%][49m[39m [########......................................................] 8Unpacking libicu74:amd64 (74.2-1ubuntu3.1) ...
+7[25;0f[42m[30mProgress: [ 15%][49m[39m [#########.....................................................] 8Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../03-libnghttp2-14_1.59.0-1ubuntu0.1_amd64.deb ...
+7[25;0f[42m[30mProgress: [ 17%][49m[39m [##########....................................................] 8Unpacking libnghttp2-14:amd64 (1.59.0-1ubuntu0.1) ...
+7[25;0f[42m[30mProgress: [ 18%][49m[39m [###########...................................................] 8Selecting previously unselected package libuv1t64:amd64.
+Preparing to unpack .../04-libuv1t64_1.48.0-1.1build1_amd64.deb ...
+7[25;0f[42m[30mProgress: [ 20%][49m[39m [############..................................................] 8Unpacking libuv1t64:amd64 (1.48.0-1.1build1) ...
+7[25;0f[42m[30mProgress: [ 22%][49m[39m [#############.................................................] 8Selecting previously unselected package libbrotli1:amd64.
+Preparing to unpack .../05-libbrotli1_1.1.0-2build2_amd64.deb ...
+7[25;0f[42m[30mProgress: [ 23%][49m[39m [##############................................................] 8Unpacking libbrotli1:amd64 (1.1.0-2build2) ...
+7[25;0f[42m[30mProgress: [ 25%][49m[39m [###############...............................................] 8Selecting previously unselected package libcares2:amd64.
+Preparing to unpack .../06-libcares2_1.27.0-1.0ubuntu1_amd64.deb ...
+7[25;0f[42m[30mProgress: [ 26%][49m[39m [################..............................................] 8Unpacking libcares2:amd64 (1.27.0-1.0ubuntu1) ...
+7[25;0f[42m[30mProgress: [ 28%][49m[39m [#################.............................................] 8Selecting previously unselected package node-xtend.
+Preparing to unpack .../07-node-xtend_4.0.2-3_all.deb ...
+7[25;0f[42m[30mProgress: [ 29%][49m[39m [##################............................................] 8Unpacking node-xtend (4.0.2-3) ...
+7[25;0f[42m[30mProgress: [ 31%][49m[39m [###################...........................................] 8Selecting previously unselected package nodejs.
+Preparing to unpack .../08-nodejs_18.19.1+dfsg-6ubuntu5_amd64.deb ...
+7[25;0f[42m[30mProgress: [ 32%][49m[39m [####################..........................................] 8Unpacking nodejs (18.19.1+dfsg-6ubuntu5) ...
+7[25;0f[42m[30mProgress: [ 34%][49m[39m [####################..........................................] 8Selecting previously unselected package node-acorn.
+Preparing to unpack .../09-node-acorn_8.8.1+ds+~cs25.17.7-2_all.deb ...
+7[25;0f[42m[30mProgress: [ 35%][49m[39m [#####################.........................................] 8Unpacking node-acorn (8.8.1+ds+~cs25.17.7-2) ...
+7[25;0f[42m[30mProgress: [ 37%][49m[39m [######################........................................] 8Selecting previously unselected package node-cjs-module-lexer.
+Preparing to unpack .../10-node-cjs-module-lexer_1.2.3+dfsg-1_all.deb ...
+7[25;0f[42m[30mProgress: [ 38%][49m[39m [#######################.......................................] 8Unpacking node-cjs-module-lexer (1.2.3+dfsg-1) ...
+7[25;0f[42m[30mProgress: [ 40%][49m[39m [########################......................................] 8Selecting previously unselected package node-busboy.
+Preparing to unpack .../11-node-busboy_1.6.0+~cs2.6.0-2_all.deb ...
+7[25;0f[42m[30mProgress: [ 42%][49m[39m [#########################.....................................] 8Unpacking node-busboy (1.6.0+~cs2.6.0-2) ...
+7[25;0f[42m[30mProgress: [ 43%][49m[39m [##########################....................................] 8Selecting previously unselected package node-undici.
+Preparing to unpack .../12-node-undici_5.26.3+dfsg1+~cs23.10.12-2_all.deb ...
+7[25;0f[42m[30mProgress: [ 45%][49m[39m [###########################...................................] 8Unpacking node-undici (5.26.3+dfsg1+~cs23.10.12-2) ...
+7[25;0f[42m[30mProgress: [ 46%][49m[39m [############################..................................] 8Selecting previously unselected package libnode109:amd64.
+Preparing to unpack .../13-libnode109_18.19.1+dfsg-6ubuntu5_amd64.deb ...
+7[25;0f[42m[30mProgress: [ 48%][49m[39m [#############################.................................] 8Unpacking libnode109:amd64 (18.19.1+dfsg-6ubuntu5) ...
+7[25;0f[42m[30mProgress: [ 49%][49m[39m [##############################................................] 8Selecting previously unselected package nodejs-doc.
+Preparing to unpack .../14-nodejs-doc_18.19.1+dfsg-6ubuntu5_all.deb ...
+7[25;0f[42m[30mProgress: [ 51%][49m[39m [###############################...............................] 8Unpacking nodejs-doc (18.19.1+dfsg-6ubuntu5) ...
+7[25;0f[42m[30mProgress: [ 52%][49m[39m [################################..............................] 8Setting up libbrotli1:amd64 (1.1.0-2build2) ...
+7[25;0f[42m[30mProgress: [ 54%][49m[39m [#################################.............................] 87[25;0f[42m[30mProgress: [ 55%][49m[39m [##################################............................] 8Setting up libuv1t64:amd64 (1.48.0-1.1build1) ...
+7[25;0f[42m[30mProgress: [ 57%][49m[39m [###################################...........................] 87[25;0f[42m[30mProgress: [ 58%][49m[39m [####################################..........................] 8Setting up libnghttp2-14:amd64 (1.59.0-1ubuntu0.1) ...
+7[25;0f[42m[30mProgress: [ 60%][49m[39m [#####################################.........................] 87[25;0f[42m[30mProgress: [ 62%][49m[39m [######################################........................] 8Setting up node-cjs-module-lexer (1.2.3+dfsg-1) ...
+7[25;0f[42m[30mProgress: [ 63%][49m[39m [#######################################.......................] 87[25;0f[42m[30mProgress: [ 65%][49m[39m [########################################......................] 8Setting up libcares2:amd64 (1.27.0-1.0ubuntu1) ...
+7[25;0f[42m[30mProgress: [ 66%][49m[39m [#########################################.....................] 87[25;0f[42m[30mProgress: [ 68%][49m[39m [#########################################.....................] 8Setting up nodejs-doc (18.19.1+dfsg-6ubuntu5) ...
+7[25;0f[42m[30mProgress: [ 69%][49m[39m [##########################################....................] 87[25;0f[42m[30mProgress: [ 71%][49m[39m [###########################################...................] 8Setting up libicu74:amd64 (74.2-1ubuntu3.1) ...
+7[25;0f[42m[30mProgress: [ 72%][49m[39m [############################################..................] 87[25;0f[42m[30mProgress: [ 74%][49m[39m [#############################################.................] 8Setting up node-xtend (4.0.2-3) ...
+7[25;0f[42m[30mProgress: [ 75%][49m[39m [##############################################................] 87[25;0f[42m[30mProgress: [ 77%][49m[39m [###############################################...............] 8Setting up openssl (3.0.13-0ubuntu3.4) ...
+7[25;0f[42m[30mProgress: [ 78%][49m[39m [################################################..............] 87[25;0f[42m[30mProgress: [ 80%][49m[39m [#################################################.............] 8Setting up node-busboy (1.6.0+~cs2.6.0-2) ...
+7[25;0f[42m[30mProgress: [ 82%][49m[39m [##################################################............] 87[25;0f[42m[30mProgress: [ 83%][49m[39m [###################################################...........] 8Setting up ca-certificates (20240203) ...
+7[25;0f[42m[30mProgress: [ 85%][49m[39m [####################################################..........] 8debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.38.2 /usr/local/share/perl/5.38.2 /usr/lib/x86_64-linux-gnu/perl5/5.38 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.38 /usr/share/perl/5.38 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8.)
+debconf: falling back to frontend: Teletype
+Updating certificates in /etc/ssl/certs...
+146 added, 0 removed; done.
+7[25;0f[42m[30mProgress: [ 86%][49m[39m [#####################################################.........] 8Setting up node-undici (5.26.3+dfsg1+~cs23.10.12-2) ...
+Setting up node-acorn (8.8.1+ds+~cs25.17.7-2) ...
+7[25;0f[42m[30mProgress: [ 88%][49m[39m [######################################################........] 87[25;0f[42m[30mProgress: [ 90%][49m[39m [#######################################################.......] 8Setting up libnode109:amd64 (18.19.1+dfsg-6ubuntu5) ...
+7[25;0f[42m[30mProgress: [ 91%][49m[39m [########################################################......] 87[25;0f[42m[30mProgress: [ 93%][49m[39m [#########################################################.....] 8Setting up nodejs (18.19.1+dfsg-6ubuntu5) ...
+7[25;0f[42m[30mProgress: [ 94%][49m[39m [##########################################################....] 8update-alternatives: using /usr/bin/nodejs to provide /usr/bin/js (js) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/js.1.gz because associated file /usr/share/man/man1/nodejs.1.gz (of link group js) doesn't exist
+7[25;0f[42m[30mProgress: [ 96%][49m[39m [###########################################################...] 8Processing triggers for libc-bin (2.39-0ubuntu8.2) ...
+Processing triggers for ca-certificates (20240203) ...
+7[25;0f[42m[30mProgress: [ 97%][49m[39m [############################################################..] 8Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+7[25;0f[42m[30mProgress: [ 99%][49m[39m [#############################################################.] 8
+7[0;25r8[1A[J[?2004h]0;root@ecaca98f42a3: /root@ecaca98f42a3:/# [7mnode /usr/src/app/index.js[27mnode /usr/src/app/index.js
+[?2004lHello World
+[?2004h]0;root@ecaca98f42a3: /root@ecaca98f42a3:/# [Kexit
+[?2004lexit
+[?2004h]0;jari@jari-System-Product-Name: ~/works/ohjelmat/react/Fullstack2023/osa 12/part12-containers-applications[01;32mjari@jari-System-Product-Name[00m:[01;34m~/works/ohjelmat/react/Fullstack2023/osa 12/part12-containers-applications[00m$ exit
+[?2004lexit
+
+Script done on 2024-09-03 19:33:57+03:00 [COMMAND_EXIT_CODE="0"]

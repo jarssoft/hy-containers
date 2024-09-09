@@ -1,0 +1,11 @@
+Script started on 2024-09-03 16:52:01+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="190" LINES="15"]
+[?2004h]0;jari@jari-System-Product-Name: ~/works/ohjelmat/react/Fullstack2023/osa 12/part12-containers-applications[01;32mjari@jari-System-Product-Name[00m:[01;34m~/works/ohjelmat/react/Fullstack2023/osa 12/part12-containers-applications[00m$ [7msudo docker container run -it ubuntu bash[27msudo docker container run -it ubuntu bash
+[?2004l[sudo] jari-käyttäjän salasana: ****    
+[?2004h]0;root@ecaca98f42a3: /root@ecaca98f42a3:/# mkr di  r [7m /usr/src/app[27m /usr/src/app[1P
+[?2004l[?2004h]0;root@ecaca98f42a3: /root@ecaca98f42a3:/# touch [7m/usr/src/app/index.js[27m/usr/src/app/index.js
+[?2004l[?2004h]0;root@ecaca98f42a3: /root@ecaca98f42a3:/# [Kexit
+[?2004lexit
+[?2004h]0;jari@jari-System-Product-Name: ~/works/ohjelmat/react/Fullstack2023/osa 12/part12-containers-applications[01;32mjari@jari-System-Product-Name[00m:[01;34m~/works/ohjelmat/react/Fullstack2023/osa 12/part12-containers-applications[00m$ eix[K[Kxit
+[?2004lexit
+
+Script done on 2024-09-03 16:52:51+03:00 [COMMAND_EXIT_CODE="0"]
