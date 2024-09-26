@@ -18,10 +18,14 @@ services:
       - ./redis_data:/data
   server:
     image: express-server
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
     volumes:
       - ./:/usr/src/app
     ports:
       - 3000:3000
+    #command: ['npm', 'run', 'dev'] # Overwrite the CMD
     environment:      
       - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
       - REDIS_URL=redis://redis:6379

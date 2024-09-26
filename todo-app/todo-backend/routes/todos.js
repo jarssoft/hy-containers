@@ -5,6 +5,7 @@ const redis = require('../redis')
 
 /* GET todos listing. */
 router.get('/', async (_, res) => {
+  console.log('GET todos listing..ff.');
   const todos = await Todo.find({})
   res.send(todos);
 });
@@ -27,7 +28,7 @@ router.post('/', async (req, res) => {
 const singleRouter = express.Router();
 
 const findByIdMiddleware = async (req, res, next) => {
-  console.log('New todo:', req.body);
+  console.log('New todos:', req.body);
   const { id } = req.params
   req.todo = await Todo.findById(id)
   if (!req.todo) return res.sendStatus(404)
@@ -43,7 +44,7 @@ singleRouter.delete('/', async (req, res) => {
 
 /* GET todo. */
 singleRouter.get('/', async (req, res) => {
-  //console.log('Request Id:', req.params.id);
+  console.log('Request Id:', req.params.id);
   res.send(req.todo); 
 });
 
