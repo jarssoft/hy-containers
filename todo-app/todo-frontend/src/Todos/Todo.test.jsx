@@ -9,6 +9,6 @@ test('renders content', () => {
 
   render(<Todo todo={todo} />)
 
-  const element = screen.getByText('Make somecthing')
+  const element = screen.getByText('Make something')
   expect(element).toBeDefined() 
 })
