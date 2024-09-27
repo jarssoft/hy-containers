@@ -1,0 +1,14 @@
+include:
+  - todo-backend/docker-compose.yml
+  - todo-frontend/docker-compose.yml
+services:
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - server # wait for the frontend container to be started
+      - app

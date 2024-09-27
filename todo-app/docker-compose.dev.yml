@@ -19,4 +19,4 @@ services:
       - 8080:80
     container_name: reverse-proxy
     depends_on:
-      - app # wait for the frontend container to be started
+      - server # wait for the frontend container to be started

@@ -9,9 +9,9 @@ COPY . .
 
 RUN npm ci
 
-RUN npm test
-
 RUN npm run build
+
+RUN npm test
 
 RUN npm install -g serve
 
