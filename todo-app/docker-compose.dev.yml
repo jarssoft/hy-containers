@@ -1,3 +1,5 @@
+include:
+  - todo-backend/docker-compose.dev.yml
 services:
   app:
     #image: todo-front-dev
