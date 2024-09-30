@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@thaddeusjiang/react-sortable-list": "^0.1.1",
+    "axios": "^1.7.7",
     "cors": "^2.8.5",
     "immutability-helper": "^3.1.1",
     "react": "^18.2.0",

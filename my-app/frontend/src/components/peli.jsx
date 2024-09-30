@@ -7,8 +7,22 @@ import { Point, solve } from 'salesman.js'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import Example from './example'
+import axios from 'axios'
 
 const Peli = () => {
+
+    const [kaikkikaupungit, setKaikkikaupungit] = useState([])
+    
+    useEffect(() => {
+        console.log('effect')
+        axios
+        .get('http://localhost:3001/api/cities')
+        .then(response => {
+            console.log('promise fulfilled')
+            console.log(response.data)
+            setKaikkikaupungit(response.data)
+            })
+        }, [])
 
     // Funktio, joka arpoo satunnaisen kaupungin, poissulkee Helsingin
     const arvoSatunnainenKaupunki = () => {
@@ -74,6 +88,8 @@ const Peli = () => {
       return () => clearInterval(interval); 
     }, [time])
 
+
+
     const lyhinReitti = () => {
 
         const kaikkiKaupungit = [suuretkaupungit[0]].concat(kaupungit)
@@ -94,6 +110,9 @@ const Peli = () => {
         setLyhin(lyhinReitti())
         setTime(100)
     }, [])
+
+
+
 
     // Apufunktio asteen muuttamiseksi radiaaneiksi
     const toRadians = (degrees) => {
