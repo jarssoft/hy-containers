@@ -20,11 +20,11 @@ services:
     image: express-server
     build:
       context: .
-      dockerfile: dev.Dockerfile
+      dockerfile: Dockerfile
     volumes:
       - ./:/usr/src/app
-    ports:
-      - 3000:3000
+    #ports:
+    #  - 3000:3000
     #command: ['npm', 'run', 'dev'] # Overwrite the CMD
     environment:      
       - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
