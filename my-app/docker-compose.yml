@@ -1,0 +1,23 @@
+services:
+  app:
+    #image: todo-front-dev
+    build:
+      context: ./frontend # The context will pick this directory as the "build context"
+      dockerfile: ./Dockerfile # This will simply tell which dockerfile to read
+    container_name: cities-front-dev
+  server:
+    #image: todo-front-dev
+    build:
+      context: ./backend # The context will pick this directory as the "build context"
+      dockerfile: ./Dockerfile # This will simply tell which dockerfile to read
+    container_name: cities-back-dev
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy3
+    depends_on:
+      - server
+      - app

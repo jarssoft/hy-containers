@@ -3,7 +3,8 @@ FROM node:20 AS build-stage
 
 WORKDIR /usr/src/app
 
-ENV VITE_BACKEND_URL="http://localhost:3001/api/cities/"
+#ENV VITE_BACKEND_URL="http://localhost:3001/api/cities/"
+ENV VITE_BACKEND_URL="http://localhost:8080/api/cities/"
 
 COPY . .
 
