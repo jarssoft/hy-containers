@@ -1,7 +1,5 @@
 import Sortable from 'sortablejs';
 import { useEffect, useState } from 'react'
-//import suuretkaupungit from './kaupungit'
-import suuretkaupungit from './logic/maaseutu'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import Example from './example'
@@ -13,6 +11,10 @@ import { laskeReitinPituus, lyhinReitti } from './logic/lyhinreitti';
 const Peli = () => {
 
     const [kaikkikaupungit, setKaikkikaupungit] = useState([])
+    const [kaupungit, setKaupungit] = useState([]); 
+    const [reitinPituus, setReitinPituus] = useState(10000);
+    const [lyhin, setLyhin] = useState(0);
+    const [time, setTime] = useState(100)
 
     useEffect(() => {
         console.log('effect')
@@ -22,13 +24,9 @@ const Peli = () => {
             console.log('promise fulfilled')
             console.log(response.data)
             setKaikkikaupungit(response.data)
+            setKaupungit(createOrder(response.data))
             })
         }, [])
-
-    const [kaupungit, setKaupungit] = useState(createOrder(suuretkaupungit));
-    const [reitinPituus, setReitinPituus] = useState(10000);
-    const [lyhin, setLyhin] = useState(0);
-    const [time, setTime] = useState(100)
 
     useEffect(()=>{
       const interval = setInterval(function() {
@@ -40,10 +38,12 @@ const Peli = () => {
     }, [time])
 
     useEffect(() => {
-        //createCityOrder()
-        setLyhin(lyhinReitti(kaupungit, suuretkaupungit))
+        console.log("lyhinReitti");
+        if(kaupungit.length>0){
+            setLyhin(lyhinReitti(kaupungit, kaikkikaupungit))            
+        }
         setTime(100)
-    }, [])
+    }, [kaikkikaupungit])
 
     const padZero = (number) => {
         return (number < 10) ? '0' + number : number;
@@ -98,7 +98,7 @@ const Peli = () => {
             const listItems = document.querySelectorAll("#game-container li span");
 
             const valittuReitti = [];           
-            let entCity = suuretkaupungit[0]
+            let entCity = kaikkikaupungit[0]
             let kaupungitCopy = [...kaupungit];
 
             for (let i = 0; i < listItems.length; i++) {
@@ -113,7 +113,7 @@ const Peli = () => {
                 entCity=city
             }
 
-            const kaikkiKaupungit = [suuretkaupungit[0]].concat(valittuReitti).concat([suuretkaupungit[0]])   
+            const kaikkiKaupungit = [kaikkikaupungit[0]].concat(valittuReitti).concat([kaikkikaupungit[0]])   
 
             //setReitinPituus(laskeReitinPituus(kaikkiKaupungit));
             setKaupungit(kaupungitCopy);
@@ -124,7 +124,7 @@ const Peli = () => {
         console.log("cityMoved");
         if(time>0){
             const jarjestys = newOrder.map(card => kaupungit[card.id])
-            const kaikkiKaupungit = [suuretkaupungit[0]].concat(jarjestys).concat([suuretkaupungit[0]])  
+            const kaikkiKaupungit = [kaikkikaupungit[0]].concat(jarjestys).concat([kaikkikaupungit[0]])  
             setReitinPituus(laskeReitinPituus(kaikkiKaupungit));
         }
     }
@@ -133,7 +133,7 @@ const Peli = () => {
         
         console.log("listChanged");
 
-        let entkaupunki=suuretkaupungit[0]
+        let entkaupunki=kaikkikaupungit[0]
         newOrder.forEach(element => {
             kaupungit[element.id].suunta = suunta(kaupungit[element.id], entkaupunki)
             entkaupunki=kaupungit[element.id]
@@ -151,7 +151,7 @@ const Peli = () => {
         color:'gray',
       }
 
-    return (kaikkikaupungit==[]  
+    return (kaupungit.length<1
         ? <div>loading...</div> 
         : <div id="game-container" onDragEnd={dragEnded}>
             <div style={{...style}}>Nurmes</div>
