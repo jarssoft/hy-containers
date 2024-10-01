@@ -4,9 +4,9 @@ import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import Example from './example'
 import axios from 'axios'
-import createOrder from './logic/createOrder';
-import laskeEtaisyys from './logic/etaisyys';
-import { laskeReitinPituus, lyhinReitti } from './logic/lyhinreitti';
+import createOrder from '../gamelogic/createOrder';
+import laskeEtaisyys from '../gamelogic/etaisyys';
+import { laskeReitinPituus, lyhinReitti } from '../gamelogic/lyhinreitti';
 
 const Peli = () => {
 
@@ -23,8 +23,11 @@ const Peli = () => {
         .then(response => {
             console.log('promise fulfilled')
             console.log(response.data)
-            setKaikkikaupungit(response.data)
-            setKaupungit(createOrder(response.data))
+            setKaikkikaupungit(response.data)            
+            const order = createOrder(response.data)
+            setKaupungit(order)
+            setLyhin(lyhinReitti(order, response.data))
+            setTime(100)
             })
         }, [])
 
@@ -36,14 +39,6 @@ const Peli = () => {
       }, 1000);
       return () => clearInterval(interval); 
     }, [time])
-
-    useEffect(() => {
-        console.log("lyhinReitti");
-        if(kaupungit.length>0){
-            setLyhin(lyhinReitti(kaupungit, kaikkikaupungit))            
-        }
-        setTime(100)
-    }, [kaikkikaupungit])
 
     const padZero = (number) => {
         return (number < 10) ? '0' + number : number;
@@ -91,7 +86,6 @@ const Peli = () => {
     const dragEnded = () => {
 
         console.log("calculateRouteLength");
-        
 
         if(time>0){
 
