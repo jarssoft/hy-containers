@@ -3,16 +3,16 @@ import { useEffect, useState } from 'react'
 //import suuretkaupungit from './kaupungit'
 import suuretkaupungit from './maaseutu'
 import { Point, solve } from 'salesman.js'
-
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import Example from './example'
 import axios from 'axios'
+import createOrder from './createOrder';
 
 const Peli = () => {
 
     const [kaikkikaupungit, setKaikkikaupungit] = useState([])
-    
+
     useEffect(() => {
         console.log('effect')
         axios
@@ -24,57 +24,7 @@ const Peli = () => {
             })
         }, [])
 
-    // Funktio, joka arpoo satunnaisen kaupungin, poissulkee Helsingin
-    const arvoSatunnainenKaupunki = () => {
-        var mahdollisetKaupungit = suuretkaupungit.filter(function (kaupunki) {
-            return kaupunki.nimi !== 'Nurmes' && kaupunki.nimi !== 'Eurajoki';
-        });
-
-        var satunnainenIndeksi = Math.floor(Math.random() * mahdollisetKaupungit.length);
-        var satunnainenKaupunki = mahdollisetKaupungit[satunnainenIndeksi];
-        mahdollisetKaupungit.splice(satunnainenIndeksi, 1); // Poistetaan valittu kaupunki mahdollisista kaupungeista
-
-        return satunnainenKaupunki;
-    }
-
-    const getRandomCities = (num) => {
-        // Arvotaan 10 eri kaupunkia
-        var valitutKaupungit = [];
-
-        while (valitutKaupungit.length < num - 1) {
-            var satunnainenKaupunki = arvoSatunnainenKaupunki();
-            if (!valitutKaupungit.some(function (kaupunki) {
-                return kaupunki.nimi === satunnainenKaupunki.nimi;
-            })) {
-                valitutKaupungit.push(satunnainenKaupunki);
-            }
-        }
-        valitutKaupungit.splice(4, 0, suuretkaupungit[1])
-        return valitutKaupungit;
-    }
-
-    const createCityOrder = () => {
-        // Arvo 10 satunnaista kaupunkia
-        var randomCities = getRandomCities(10);
-        var selectedCities = [];
-        var remainingCities = [];
-
-        // Lisää valitut satunnaiset kaupungit kaupunkilistaan
-        for (var i = 0; i < randomCities.length; i++) {
-            selectedCities.push(randomCities[i]);
-        }
-
-        // Luo lista jäljellä olevista kaupungeista
-        for (var j = 1; j < suuretkaupungit.length; j++) {
-            if (!selectedCities.includes(suuretkaupungit[j])) {
-                remainingCities.push(suuretkaupungit[j]);
-            }
-        }
-
-        return selectedCities
-    }
-
-    const [kaupungit, setKaupungit] = useState(createCityOrder());
+    const [kaupungit, setKaupungit] = useState(createOrder(suuretkaupungit));
     const [reitinPituus, setReitinPituus] = useState(10000);
     const [lyhin, setLyhin] = useState(0);
     const [time, setTime] = useState(100)
@@ -88,8 +38,6 @@ const Peli = () => {
       return () => clearInterval(interval); 
     }, [time])
 
-
-
     const lyhinReitti = () => {
 
         const kaikkiKaupungit = [suuretkaupungit[0]].concat(kaupungit)
@@ -102,7 +50,6 @@ const Peli = () => {
 
         //console.log(reitti);
         return laskeReitinPituus(reitti)
-
     }
 
     useEffect(() => {
@@ -110,9 +57,6 @@ const Peli = () => {
         setLyhin(lyhinReitti())
         setTime(100)
     }, [])
-
-
-
 
     // Apufunktio asteen muuttamiseksi radiaaneiksi
     const toRadians = (degrees) => {
@@ -156,7 +100,6 @@ const Peli = () => {
     const padZero = (number) =>{
         return (number < 10) ? '0' + number : number;
       }
-
 
     const suunta = (city1, city2) => {
 
