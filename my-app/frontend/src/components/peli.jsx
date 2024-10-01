@@ -16,10 +16,12 @@ const Peli = () => {
     const [lyhin, setLyhin] = useState(0);
     const [time, setTime] = useState(100)
 
+    const BACKENDURL=import.meta.env.VITE_BACKEND_URL
+
     useEffect(() => {
         console.log('effect')
         axios
-        .get('http://localhost:3001/api/cities')
+        .get(BACKENDURL)
         .then(response => {
             console.log('promise fulfilled')
             console.log(response.data)
