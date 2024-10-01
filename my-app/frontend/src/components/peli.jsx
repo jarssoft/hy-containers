@@ -1,13 +1,14 @@
 import Sortable from 'sortablejs';
 import { useEffect, useState } from 'react'
 //import suuretkaupungit from './kaupungit'
-import suuretkaupungit from './maaseutu'
-import { Point, solve } from 'salesman.js'
+import suuretkaupungit from './logic/maaseutu'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import Example from './example'
 import axios from 'axios'
-import createOrder from './createOrder';
+import createOrder from './logic/createOrder';
+import laskeEtaisyys from './logic/etaisyys';
+import { laskeReitinPituus, lyhinReitti } from './logic/lyhinreitti';
 
 const Peli = () => {
 
@@ -38,68 +39,15 @@ const Peli = () => {
       return () => clearInterval(interval); 
     }, [time])
 
-    const lyhinReitti = () => {
-
-        const kaikkiKaupungit = [suuretkaupungit[0]].concat(kaupungit)
-
-        //(63,54−60,22) (29,07−21,48) = 0,437
-        var points = kaikkiKaupungit.map((city) => new Point(city.leveyspiiri*2, city.pituuspiiri));
-
-        var solution = solve(points);
-        var reitti = solution.map(i => kaikkiKaupungit[i]).concat([suuretkaupungit[0]]);
-
-        //console.log(reitti);
-        return laskeReitinPituus(reitti)
-    }
-
     useEffect(() => {
         //createCityOrder()
-        setLyhin(lyhinReitti())
+        setLyhin(lyhinReitti(kaupungit, suuretkaupungit))
         setTime(100)
     }, [])
 
-    // Apufunktio asteen muuttamiseksi radiaaneiksi
-    const toRadians = (degrees) => {
-        return (degrees * Math.PI) / 180;
-    }
-
-    // Funktio reitin pituuden laskemiseksi Haversine-kaavalla
-    const laskeEtaisyys = (lat1, lon1, lat2, lon2) => {
-        // Maapallon säde kilometreissä
-        const radius = 6371.0;
-
-        // Muunna latitudet ja longitudet radiaaneiksi
-        const lat1Rad = toRadians(lat1);
-        const lon1Rad = toRadians(lon1);
-        const lat2Rad = toRadians(lat2);
-        const lon2Rad = toRadians(lon2);
-
-        // Haversine-kaavan mukainen etäisyys lasketaan
-        const dlon = lon2Rad - lon1Rad;
-        const dlat = lat2Rad - lat1Rad;
-        const a = Math.sin(dlat / 2) ** 2 + Math.cos(lat1Rad) * Math.cos(lat2Rad) * Math.sin(dlon / 2) ** 2;
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        const distance = radius * c;
-
-        return distance;
-    }
-
-    const laskeReitinPituus = (reitti) => {
-        //console.log(reitti);
-        let totalDistance = 0
-        for (let i = 0; i < reitti.length - 1; i++) {
-            const city1 = reitti[i];
-            const city2 = reitti[i + 1];
-
-            const distance = laskeEtaisyys(city1.leveyspiiri, city1.pituuspiiri, city2.leveyspiiri, city2.pituuspiiri);
-            totalDistance += distance;
-        }
-        return totalDistance
-    }
-
-    const padZero = (number) =>{
+    const padZero = (number) => {
         return (number < 10) ? '0' + number : number;
-      }
+    }
 
     const suunta = (city1, city2) => {
 
@@ -140,7 +88,10 @@ const Peli = () => {
         }
     }
 
-    const calculateRouteLength = () => {
+    const dragEnded = () => {
+
+        console.log("calculateRouteLength");
+        
 
         if(time>0){
 
@@ -169,21 +120,25 @@ const Peli = () => {
         }
     }
 
+    const cityMoved = (newOrder) => {
+        console.log("cityMoved");
+        if(time>0){
+            const jarjestys = newOrder.map(card => kaupungit[card.id])
+            const kaikkiKaupungit = [suuretkaupungit[0]].concat(jarjestys).concat([suuretkaupungit[0]])  
+            setReitinPituus(laskeReitinPituus(kaikkiKaupungit));
+        }
+    }
+
     const listChanged = (newOrder) => {
+        
+        console.log("listChanged");
+
         let entkaupunki=suuretkaupungit[0]
         newOrder.forEach(element => {
             kaupungit[element.id].suunta = suunta(kaupungit[element.id], entkaupunki)
             entkaupunki=kaupungit[element.id]
         });
         return kaupungit.map(city => <>{city.suunta} {city.nimi}</>)
-    }
-
-    const cityMoved = (newOrder) => {
-        if(time>0){
-            const jarjestys = newOrder.map(card => kaupungit[card.id])
-            const kaikkiKaupungit = [suuretkaupungit[0]].concat(jarjestys).concat([suuretkaupungit[0]])  
-            setReitinPituus(laskeReitinPituus(kaikkiKaupungit));
-        }
     }
 
     const style = {
@@ -196,8 +151,9 @@ const Peli = () => {
         color:'gray',
       }
 
-    return (
-        <div id="game-container" onDragEnd={calculateRouteLength}>
+    return (kaikkikaupungit==[]  
+        ? <div>loading...</div> 
+        : <div id="game-container" onDragEnd={dragEnded}>
             <div style={{...style}}>Nurmes</div>
             <div className="App">
 				<DndProvider backend={HTML5Backend}>

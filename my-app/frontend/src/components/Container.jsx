@@ -6,7 +6,7 @@ const style = {
 }
 export const Container = ({initCards, onMove, onChange}) => {
   {
-    console.log(initCards);
+    //console.log(initCards);
     const [cards, setCards] = useState(
       onChange(
           initCards.map((card,i) => ({id:i, text:card})))
